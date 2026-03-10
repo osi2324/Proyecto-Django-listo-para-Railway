@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+
+<style>
+body{
+    background:#0f172a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Segoe UI;
+    color:white;
+}
+
+.box{
+    background:#1e293b;
+    padding:40px;
+    border-radius:12px;
+    width:300px;
+}
+
+input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    border-radius:6px;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:20px;
+    background:#38bdf8;
+    border:none;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+
+<div class="box">
+
+<h2>Iniciar Sesión</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Entrar</button>
+</form>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: Arial; }
+        h1 { color: #1e293b; }
+        table { width: 80%; border-collapse: collapse; }
+        th, td { border: 1px solid #000; padding: 5px; }
+        th { background-color: #ddd; }
+    </style>
+</head>
+<body>
+
+<h1>Reporte de Equipos</h1>
+<p><strong>Fecha de generación:</strong> {{ fecha_actual }}</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Estado</th>
+            <th>Fecha Registro</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for equipo in equipos %}
+        <tr>
+            <td>{{ equipo.nombre }}</td>
+            <td>{{ equipo.estado }}</td>
+            <td>{{ equipo.fecha }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>

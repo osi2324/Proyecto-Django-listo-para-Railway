@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Asignar Roles</title>
+</head>
+
+<body>
+
+<h2>Gestión de Roles</h2>
+
+<table border="1" cellpadding="10">
+<tr>
+    <th>Usuario</th>
+    <th>Rol</th>
+    <th>Guardar</th>
+</tr>
+
+{% for item in data %}
+<tr>
+
+<td>{{ item.usuario.username }}</td>
+
+<td>
+<form method="POST">
+    {% csrf_token %}
+    {{ item.form.rol }}
+    <input type="hidden" name="perfil_id" value="{{ item.perfil.id }}">
+</td>
+
+<td>
+    <button type="submit">Guardar</button>
+</td>
+
+</form>
+
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
